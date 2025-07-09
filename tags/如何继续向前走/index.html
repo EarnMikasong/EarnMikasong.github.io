@@ -123,6 +123,94 @@
   isToc: false,
   pageType: 'tag'
 }</script><style>
+  /* 现有样式保持不变... */
+  
+  /* 强制设置各页面背景 */
+  
+  /* 标签页面 */
+  .layout_page.tag .page-header,
+  .layout_page.tags .page-header,
+  body.tag .page-header,
+  body.tags .page-header {
+    background-image: url('/images/S0001-1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 300px !important;
+  }
+  
+  /* 分类页面 */
+  .layout_page.category .page-header,
+  .layout_page.categories .page-header,
+  body.category .page-header,
+  body.categories .page-header {
+    background-image: url('/images/S0016-1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 300px !important;
+  }
+  
+  /* 归档页面 */
+  .layout_page.archive .page-header,
+  .layout_archive .page-header,
+  body.archive .page-header {
+    background-image: url('/images/S0045-1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 300px !important;
+  }
+  
+  /* 友链页面 */
+  .layout_page.link .page-header,
+  body.link .page-header {
+    background-image: url('/images/S0046-1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 300px !important;
+  }
+  
+  /* 关于页面 */
+  .layout_page.about .page-header,
+  body.about .page-header {
+    background-image: url('/images/S0028-1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 300px !important;
+  }
+  
+  /* 页面标题样式 */
+  .page-header .page-title {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6) !important;
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+  }
+  
+  /* 页面头部遮罩 */
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      rgba(0,0,0,0.3), 
+      rgba(0,0,0,0.1)
+    ) !important;
+    z-index: 1;
+  }
+  
+  .page-header .page-title {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+<style>
   /* 修改主页标题颜色 - 使用正确的选择器 */
   .site-title,
   .index-info .site-title,
@@ -248,7 +336,7 @@
           </div>
           <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%98%B6%E6%AE%B5%E5%A4%A7%E6%80%BB%E7%BB%93/"><span class="card-category-list-name">阶段大总结</span><span class="card-category-list-count">1</span></a></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E5%A4%A7%E5%AD%A6%E7%BB%8F%E5%8E%86%E4%B8%8E%E6%84%9F%E6%83%B3/" style="font-size: 1.1em; color: #999">大学经历与感想</a> <a href="/tags/%E5%8A%AA%E5%8A%9B%E7%9A%84%E6%84%8F%E4%B9%89/" style="font-size: 1.1em; color: #999">努力的意义</a> <a href="/tags/%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%90%91%E5%89%8D%E8%B5%B0/" style="font-size: 1.1em; color: #999">如何继续向前走</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.1em; color: #999">博客</a></div></div><div class="card-widget card-archives">
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E5%A4%A7%E5%AD%A6%E7%BB%8F%E5%8E%86%E4%B8%8E%E6%84%9F%E6%83%B3/" style="font-size: 1.1em; color: #999">大学经历与感想</a> <a href="/tags/%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%90%91%E5%89%8D%E8%B5%B0/" style="font-size: 1.1em; color: #999">如何继续向前走</a> <a href="/tags/%E5%8A%AA%E5%8A%9B%E7%9A%84%E6%84%8F%E4%B9%89/" style="font-size: 1.1em; color: #999">努力的意义</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.1em; color: #999">博客</a></div></div><div class="card-widget card-archives">
     <div class="item-headline">
       <i class="fas fa-archive"></i>
       <span>Archives</span>
@@ -276,7 +364,7 @@
         </li>
       
     </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-07-09T14:26:11.924Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 By 程序员塔塔</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-07-09T14:44:57.648Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 By 程序员塔塔</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script>
   // 调试：检查评论是否加载
   document.addEventListener('DOMContentLoaded', function() {
     console.log('页面加载完成');
