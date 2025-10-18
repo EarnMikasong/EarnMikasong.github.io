@@ -123,6 +123,48 @@
   isToc: false,
   pageType: 'category'
 }</script><style>
+  /* 本地字体优先：将对应 woff2 放入 source/fonts/ 后生效 */
+  @font-face {
+    font-family: 'Noto Serif SC';
+    src: local('Noto Serif SC'),
+         url('/fonts/NotoSerifSC-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Noto Serif SC';
+    src: local('Noto Serif SC Semibold'), local('NotoSerifSC-SemiBold'),
+         url('/fonts/NotoSerifSC-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'ZCOOL XiaoWei';
+    src: local('ZCOOL XiaoWei'), local('ZCOOLXiaoWei-Regular'),
+         url('/fonts/ZCOOLXiaoWei-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+<!-- 使用国内可访问镜像加载字体 -->
+<link rel="preconnect" href="https://fonts.loli.net">
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+<link href="https://fonts.loli.net/css2?family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* 强化字体覆盖，应用到主要标题与正文 */
+  html, body, .page-title, .site-title, .post-title, .article-title,
+  h1, h2, h3, h4, h5, h6, .recent-post-item .post-title, .menu-item a {
+    font-family: 'Noto Serif SC','ZCOOL XiaoWei','Noto Serif','PingFang SC','Hiragino Sans GB','Microsoft Yahei','WenQuanYi Micro Hei','ST Heiti',serif !important;
+  }
+
+  /* 仅在标签页显示侧边栏，其它页面隐藏（保持菜单干净） */
+  body:not(.tags) #aside-content { display: none !important; }
+  body.tags #aside-content { display: block !important; }
+</style>
+<style>
   /* 隐藏作者卡片中的站点统计（Articles/Tags/Categories） */
   .card-widget.card-info .site-data { display: none !important; }
 </style>
